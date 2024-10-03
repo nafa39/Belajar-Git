@@ -1,0 +1,87 @@
+
+h1{
+    text-align: center;
+}
+.box{
+    background: greenyellow;
+    height: 200px;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.box-dua{
+    background: navy;
+    height: 100px;
+    width: 600px;
+    margin: 70px;
+    padding-left: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Mengenal-Font-CSS{
+    background: blue;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.tulisan_satu{
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.tulisan_dua{
+    color: orangered;
+    font-size: 24px;
+    font-style: italic;
+    text-align: right;
+    text-transform: capitalize;
+    text-decoration: overline;
+}
+
+.tulisan_tiga{
+    color: aqua;
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration: line-through;
+    word-spacing: 10px;
+}
+
+.link{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20pt;
+}
+
+.link:hover{
+    color: red;
+}
+
+.link:link{
+    color: blue;
+}
+
+.link:active{
+    color: green;
+}
+
+.link:visited{
+    color: yellow;
+}
+.tulisan_kiri{
+    text-align: left;
+}
+.tulisan_kanan{
+    text-align: right;
+}
+.tulisan_tengah{
+    text-align: center;
+}
+.tulisan_justify{
+    text-align: justify;
+}
