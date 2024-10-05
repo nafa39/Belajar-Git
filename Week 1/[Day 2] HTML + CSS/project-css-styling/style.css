@@ -85,3 +85,64 @@ h1{
 .tulisan_justify{
     text-align: justify;
 }
+
+/*position css*/
+.kotak{
+    background: blue;
+    position:absolute;
+    left: 40px;
+    padding: 10px;
+}
+.kotak2{
+    background: green;
+    position: relative;
+    left: 40px;
+    padding: 10px;
+}
+.kotak3{
+    background: red;
+    position: static;
+    left: 40px;
+    padding: 10px;
+}
+.kotak4{
+    background: hotpink;
+    position: fixed;
+    left: 40px;
+    padding: 10px;
+}
+/*border*/
+#garis1{
+    border-style: solid;
+}
+#garis2{
+    border-style: dotted;
+}
+#garis3{
+    border-style: dashed;
+}
+#garis4{
+    border-style: double;
+}
+#garis5{
+    border-style: groove;
+}
+#garis6{
+    border-style: inset;
+}
+#garis7{
+    border-style: outset;
+}
+#garis8{
+    border-style: ridge;
+}
+/*list*/
+ul.transportasi{
+    list-style-type: square;
+}
+ul.lokasi{
+    list-style-type: circle;
+}
+ul.merk{
+    list-style-type: upper-roman;
+}
