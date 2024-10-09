@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Challenge Day2 Week2</title>
+        <title>Challenge Javascript</title>
     </head>
     <body>
+        <div>challenge 1
         <h3>Masukkan password</h3>
         <input type="password" id="inputPassword">
         <button onclick="checkPassword()">Check</button>
@@ -20,5 +21,31 @@
             }
         }
         </script>
+        </div>
+        <div>challenge 2
+            <h3>Masukkan Nilai Anda</h3>
+            <input type="number" id="inputScore">
+            <button onclick="checkScore()">Check</button>
+            <script>
+                function checkScore(){
+                    let userScore = document.getElementById("inputScore").value;
+                    if (userScore <= 100 && userScore >= 80){
+                        alert("Your grade is A")
+                    }
+                    else if (userScore < 80 && userScore >= 60){
+                        alert("Your grade is B")
+                    }
+                    else if (userScore < 60 && userScore >= 40){
+                        alert("Your grade is C")
+                    }
+                    else if (userScore < 40){
+                        alert("Your grade is D")
+                    }
+                    else{
+                        alert("cannot calculate you grade")
+                    }
+                }
+            </script>
+        </div>
     </body>
 </html>
