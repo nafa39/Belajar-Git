@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge Day2 Week2</title>
+    </head>
+    <body>
+        <h3>Masukkan password</h3>
+        <input type="password" id="inputPassword">
+        <button onclick="checkPassword()">Check</button>
+        <script>
+            let correctPassword = '12345';
+            function checkPassword(){
+                let userPassword = document.getElementById("inputPassword").value;
+            if (userPassword === correctPassword){
+                alert("Password correct! you can continue to access this website");
+            }
+            else{
+                window.location.assign("https://www.google.com")
+            }
+        }
+        </script>
+    </body>
+</html>

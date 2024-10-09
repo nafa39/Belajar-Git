@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript</title>
+
+    </head>
+    <body>
+        <h1>Tipe data string di JS</h1>
+        <div id="hasil"></div>
+        <script>
+            var kalimat="Belajar JS di Workshop WFDB";
+            document.getElementById('hasil').innerHTML = kalimat;
+        </script>
+        <h1>Tipe data array di JS</h1>
+        <div id="hasil-array"></div>
+        <script>
+            var transport=["Mobil", "Motor", "Pesawat", "Kapal"];
+            document.getElementById('hasil-array').innerHTML = transport[1];
+            document.getElementById('hasil-array').innerHTML = transport[3];
+        </script>
+        <h1>Tipe data object di JS</h1>
+        <div id="hasil-object"></div>
+        <script>
+            var manusia={
+                nama : "Wijaya",
+                asal : "jakarta",
+                usia : 26,
+            };
+            document.getElementById('hasil-object').innerHTML = manusia.nama + " tinggal di " + manusia.asal;
+        </script>
+        <h1>Penggunaan Operator Aritmatika di JS</h1>
+        <div id="penjumlahan"></div>
+        <div id="pengurangan"></div>
+        <div id="perkalian"></div>
+        <div id="pembagian"></div>
+        <div id="modulus"></div>
+        <script>
+            var bilangan1=6;
+            var bilangan2=2;
+            var pengurangan=bilangan1-bilangan2;
+            var penjumlahan=bilangan1+bilangan2;
+            var perkalian=bilangan1*bilangan2;
+            var pembagian=bilangan1/bilangan2;
+            var modulus=bilangan1%bilangan2;
+            document.getElementById('penjumlahan').innerHTML = penjumlahan;
+            document.getElementById('pengurangan').innerHTML = pengurangan;
+            document.getElementById('perkalian').innerHTML = perkalian;
+            document.getElementById('pembagian').innerHTML = pembagian;
+            document.getElementById('modulus').innerHTML = modulus;
+        </script>
+        
+        <div>
+            <h1>Belajar If/Else</h1>
+            <script>
+                var myHeight = 149;
+                if (myHeight > 160){
+                    console.log ('hore, saya bisa roller coaster!!!');
+                }
+                else {
+                    console.log('yasudah, saya naik komedi puar saja');
+                }
+                console.log('Sudah sore, pulang yuk!');
+            </script>
+        </div>
+        <div>
+            <h1>Logical operator</h1>
+            <script>
+                var ownKTP = true;
+                var ownSIM = true;
+                if (ownKTP || ownSIM){
+                    console.log('saya bisa beli tiket');
+                }
+                
+            </script>
+            <script>
+                var myAge = 25;
+                if (myAge === 17 && myHeight > 150){
+                    console.log('Saya bisa memiliki SIM!!');
+                }
+                else{
+                    console.log('losss ga atek SIM');
+                }
+            </script>
+        </div>
+        <div>
+            <h1>Ternary Operator</h1>
+            <script>
+                myAge>= 17 && myHeight >150 ? console.log('saya bisa punya SIM!!!') : console.log('saya tidak bisa punya SIM!!!');
+            </script>
+        </div>
+        <div>
+            <h1>Nested If</h1>
+            <script>
+                if (myAge>=17 && myHeight>150){
+                    if (mobil){
+                        console.log('Anda memerlukan SIM A');
+                    }
+                    else if (truck){
+                        console.log('Anda memerlukan SIM B');
+                    }
+                    else if (motor){
+                        console.log('Anda memerlukan SIM C');
+                    }
+                    else{
+                        console.log('Kendaraan tidak ditemukan!!');
+                    }
+                }
+                else{
+                    console.log('Anda belum memenuhi persyaratan untuk membuat SIM!!');
+                }
+            </script>
+        </div>
+    </body>
+</html>
