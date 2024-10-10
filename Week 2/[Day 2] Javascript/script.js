@@ -72,7 +72,7 @@ else if (angka1 > angka2){
 }
 else if (angka1 === angka2){
     console.log('-1');
-}*/
+}
 
 //conditional graduate
 let nama = prompt('masukkan nama murid anda:');
