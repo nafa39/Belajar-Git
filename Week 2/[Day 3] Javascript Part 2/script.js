@@ -1,4 +1,4 @@
-let n = prompt('Masukkan bilangan:');
+/*let n = prompt('Masukkan bilangan:');
 
 function prima(n){
     if(n<=1){
@@ -17,19 +17,19 @@ if (prima(n)){
 }
 else{
     console.log('Ini bukan bilangan prima');
-}
+}*/
 
-let list = [];
+//let list = [];
 
-let lowLimit = prompt('Masukkan limit bawah:');
-let highLimit = prompt('Masukkan limit atas:');
+let lowLimit = parseInt(prompt('Masukkan limit bawah:'));
+let highLimit = parseInt(prompt('Masukkan limit atas:'));
 
-function bilPrima(lowLimit){
-    if(lowLimit<=1){
+function bilPrima(n){
+    if(n<=1){
         return false;
     }
-    for (let i=2; i<=lowLimit-1;i++){
-        if (lowLimit % i === 0){
+    for (let i=2; i<=n-1;i++){
+        if (n % i === 0){
             return false;
         }
     }
@@ -38,10 +38,10 @@ function bilPrima(lowLimit){
 
 while (lowLimit<=highLimit){
     if (bilPrima(lowLimit)){
-        list.push(lowLimit);
+        console.log(lowLimit);
     }    
     lowLimit++;
 }
     
 
-console.log(list);
+//console.log(list);
