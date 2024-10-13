@@ -1,9 +1,9 @@
 //CASE 1 - DISNEY ISLAND
 
 //declare variable and let customer input
-//let wahana = prompt('Wahana mana yang ingin anda kunjungi?\n');
-//let usia = parseInt(prompt('Berapa usia anda?'));
-//let saldo = parseInt(prompt('Mohon masukkan saldo anda'));
+/*let wahana = prompt('Wahana mana yang ingin anda kunjungi?\n');
+let usia = parseInt(prompt('Berapa usia anda?'));
+let saldo = parseInt(prompt('Mohon masukkan saldo anda'));
 
 //declare function for dcide the tarif
 function disneyIsland(){
@@ -114,42 +114,52 @@ if (amountExercise === amountUser){
 }
 else{
     console.log('Input yang anda masukkan tidak lengkap!');
-}
-//let coordinate = parseInt(prompt('Masukkan koordinat bintang'));
-//let arrayCoordinate = coordinate.split("");
-//let arrayResult = resultCol.split("");
-//let star = "*"
+}*/
+
 
 //CASE 3 - ASTERIX IN THE BOX
 
+//declare the variable of array for row
+let rowArray = [];
+
+//declare variable for column number
 let col = 5;
+
+//declare variable content hashtag
+let hashtag = "#";
+
+//declare variable for row number as input
 let row = parseInt(prompt('Masukkan jumlah row'));
 
-
-let hashtag = "#"
-let finalArray = [];
-
-//let resultCol = hashtag.repeat(col);
-
-
-for (let i = 0; i< row; i++){
-    let resultRow = "";
-    for (let j = 0; j < col; j++) {
-        resultRow += hashtag;
+//create function to resulting the array for 1 row with 5 column
+function columns(){
+    let colArray = [];
+    for (let i = 0; i <= col - 1; i++){
+        colArray[i] = hashtag;
     }
-    finalArray.push(resultRow);
-    console.log(resultRow);
+    return colArray;
 }
 
-
-/*class matrix{
-    constructor(row, col){
-        this.grid=[];
-        for (let i = 0; i < row; i++){
-            this.grid[i] = []
-            for (let j = 0; j < col; j++){
-                this.grid[i][j] = {}
-            }
-        }
+//create function to resulting the 2 dimension array based on row number
+function rows(){
+    for (let j = 0; j <= row-1; j++){
+        rowArray[j] = columns();
     }
-}*/
+    //hide the result of matriks
+    //rowArray.forEach(row => console.log(row));
+}
+
+//call the function of matrix
+rows();
+
+//declare variable star, input coordinate and matrix coordinate
+let star = "*";
+let coordinate = prompt('Masukkan koordinat bintang');
+let rowCoordinate = parseInt(coordinate[0])-1;
+let colCoordinate = parseInt(coordinate[1])-1;
+
+//declare replacing hashtag with star in the coordinate
+rowArray[rowCoordinate][colCoordinate] = star;
+
+//display the result
+rowArray.forEach(row => console.log(row));
