@@ -1,7 +1,7 @@
 //CASE 1 - DISNEY ISLAND
 
 //declare variable and let customer input
-/*let wahana = prompt('Wahana mana yang ingin anda kunjungi?\n');
+let wahana = prompt('Wahana mana yang ingin anda kunjungi?\n');
 let usia = parseInt(prompt('Berapa usia anda?'));
 let saldo = parseInt(prompt('Mohon masukkan saldo anda'));
 
@@ -114,7 +114,7 @@ if (amountExercise === amountUser){
 }
 else{
     console.log('Input yang anda masukkan tidak lengkap!');
-}*/
+}
 
 
 //CASE 3 - ASTERIX IN THE BOX

@@ -1,4 +1,4 @@
-var index = 0;
+/*var index = 0;
 
 while (index < 10){
     console.log("Perulangan ke:", index);
@@ -89,4 +89,58 @@ if (nilai >= 70){
 }
 else{
     console.log('Murid dengan nama: ', nama, 'dinyatakan TIDAK LULUS')
+}
+
+//conditional konversi menit
+let detik = parseInt(prompt('Berapa detik yang anda butuhkan?'));
+let minutes = Math.floor(detik / 60);
+let seconds = detik % 60;
+
+console.log(`${minutes}:${seconds}`);
+
+//conditional gacha
+let acak = document.getElementById('button');
+
+function gacha(min,max){
+    return Math.floor(Math.random()* (max - min +1) + min);
+}
+
+acak.addEventListener('click', () =>{
+    let result = gacha(1,5);
+    switch (result) {
+        case 1:
+            console.log('coba lagi ya');
+            break;
+        case 2:
+            console.log('selamat kamu mendapatkan kupon sebanyak 5');
+            break;
+        case 3:
+            console.log('selamat kamu mendapatkan kupon sebanyak 15');
+            break;
+        case 4:
+            console.log('selamat kamu mendapatkan kupon sebanyak 50');
+            break;
+        case 5:
+            console.log('WOW, kamu menang jackpot! Selamat!!');
+            break;  
+    }
+})
+
+//looping laundry day
+let baju =0;
+while (baju < 20){
+    baju++
+    console.log(`pakaian ke ${baju} sudah masuk`);
+}
+console.log ('tombol power menyala');*/
+
+//looping i love coding
+//syntax for
+
+for (let i=1; i<= 20; i++){
+    console.log(`${i} - I love coding`);
+}
+
+for (let i=20; i>=1; i--){
+    console.log(`${i} - I will become fullstack developer`);
 }
