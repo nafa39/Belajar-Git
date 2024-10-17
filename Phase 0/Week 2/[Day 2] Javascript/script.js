@@ -144,3 +144,115 @@ for (let i=1; i<= 20; i++){
 for (let i=20; i>=1; i--){
     console.log(`${i} - I will become fullstack developer`);
 }
+
+//syntax while
+
+/*console.log('LOOPING WHILE PERTAMA');
+ let i = 0;
+while (i<20){
+    i+=2;
+    console.log(`${i} - I love coding`);
+}
+
+console.log('LOOPING WHILE KEDUA');
+let j = 22;
+while (j>2){
+    j-=2;
+    console.log(`${j} - I will become fullstack developer`);
+}*
+
+//looping odd even numbers no. 1
+for (let i=1; i<=100; i+=3){
+    if(i%2 === 0){
+        console.log(`${i} - genap`);
+    }
+    else{
+        console.log(`${i} - ganjil`);
+    }
+}*
+
+//looping odd even numbers no. 2
+for (let i=50; i<=200; i+=5){
+    if (i%3 === 0){
+        console.log(`${i} - faktor 3`);
+    }
+    else{
+        console.log(`${i} - tidak bisa dibagi 3`);
+    }
+}
+
+//looping odd even numbers no. 2
+for (let i = 100; i<=200; i+=7){
+    if(i%8 === 0){
+        console.log(i);
+    }
+}
+
+//Looping asteriks
+let count = document.getElementById('row');
+let star = "*";
+let submit = document.getElementById('button');
+
+submit.addEventListener('click',() =>{
+    let row = "";
+    for (i=0; i<= parseInt(count.value)-1; i++){
+        row += star + "\n";
+    }
+    console.log(row);
+})
+
+//nested looping barisan bintang
+let count = document.getElementById('row');
+let star = "*";
+let submit = document.getElementById('button');
+
+submit.addEventListener('click',() =>{
+    let row = [];
+    let row2 = [];
+    for (i=0; i<= parseInt(count.value)-1; i++){
+        row[i] = star;
+        row2 [i] = [];
+        for(let j = 0; j <= parseInt(count.value)-1;j++){
+            row2[i][j] = star;
+        }
+    }
+    row2.forEach(element => {
+        console.log(element);
+    });
+})
+
+//nested loop barisan tangga
+let count = document.getElementById('row');
+let star = "*";
+let submit = document.getElementById('button');
+
+submit.addEventListener('click',() =>{
+    let output = "";
+    for (i=0; i<= parseInt(count.value)-1; i++){
+        let row = "";
+        for(j=0; j<= i;j++){
+            row += star;
+
+        }
+       output += row + "\n";
+    }
+    console.log(output);
+})*/
+
+//nested loop barisan tangga terbalik
+let count = document.getElementById('row');
+let star = "*";
+let submit = document.getElementById('button');
+
+submit.addEventListener('click',() =>{
+    let output = "";
+    for (i=parseInt(count.value)-1; i>=0; i--){
+        let row = "";
+        for(j=i; j>=0;j--){
+            row += star;
+
+        }
+       output += row + "\n";
+    }
+    console.log(output);
+})
