@@ -42,3 +42,4 @@ function calculateAverage(grade){
 console.log(calculateAverage(facultyGrades2));
 
 //Soal 2
+
