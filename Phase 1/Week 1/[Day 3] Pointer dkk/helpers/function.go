@@ -16,3 +16,8 @@ func CariPegawai(ID int) *Pegawai {
 	}
 	return &pegawai
 }
+
+// function pakai pointer change nama jadi budi
+func Ubah(pegawai *Pegawai) {
+	pegawai.Nama = "Budi"
+}
