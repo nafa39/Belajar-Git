@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
+
+	//INCLASS DAY 2
+
 	//var name string = "Airell"
 	//var age int = 23
 
@@ -105,6 +111,7 @@ Mari belajar "Scalable web service with go".`
 		fmt.Println("angka", i)
 	}
 
+	//EXERCISE DAY 2
 	//PR
 	//soal 1
 
@@ -116,7 +123,27 @@ Mari belajar "Scalable web service with go".`
 	//nanti diganti pake *
 	//AS*
 
+	//soal 3
+
+	//bikin tribonacci setelah fibonacci
+
+	//hal 20 outerloop
+
+	var name = "NAFATULMIARAHMAWATI"
+	for i := 1; len(name) > 0; i++ {
+		if i > len(name) {
+			// When remaining characters are less than i, print the rest with asterisks
+			fmt.Println(name, strings.Replace(fmt.Sprintf("%*s", i-len(name), ""), " ", "*", -1))
+			//fmt.Println(name, "*")
+			break
+		}
+		fmt.Println(name[:i])
+		name = name[i:]
+	}
+
 	//soal 2
+
+	//make the pyramids like this for the output if the input is 5
 
 	//00000
 	//0000
@@ -124,17 +151,10 @@ Mari belajar "Scalable web service with go".`
 	//00
 	//0
 
-	//soal 3
-
-	//bikin tribonacci setelah fibonacci
-
-	//hal 20 outerloop
-
-	//punya dharma
-	var name = "DHARMA"
-	for i := 1; len(name) > 0; i++ {
-		fmt.Println(name[:i])
-		name = name[i:]
+	a := "0"
+	input := 7
+	for i := input; i > 0; i-- {
+		fmt.Println(strings.Repeat(a, i))
 	}
 
 }
@@ -150,26 +170,3 @@ func penjumlahan() (int, error) {
 func coba(x, y int) (int, int) {
 	return 100, 50
 }
-
-//PR jawaban obie
-// func printWord(word string) (string, error){
-// 	var wordPyramid = "";
-
-// 	for i := 0; i < len(word); i++ {
-// 		for j:= 0; j <= i; j++{
-// 			wordPyramid += string(word[j]) + " "
-// 		}
-
-// 		if (i != len(word)-1){
-// 			wordPyramid += "\n"
-// 		}
-// 	}
-
-// 	return wordPyramid, nil
-// }
-// // ``
-
-// // usage di main functionnya:
-
-// // var triangle, _ = printWord("Tugas");
-// // fmt.Println(triangle)
