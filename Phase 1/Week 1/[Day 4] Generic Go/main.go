@@ -70,6 +70,36 @@ func ChangeValue[T comparable](entity helpers.GetterSetter[T], value T) {
 	fmt.Println("success change value to", entity.Get())
 }
 
+// INCLASS
+func halo[T any](params T) {
+	fmt.Println(params)
+}
+
+func hallo[T int | float64 | bool](params T) {
+	fmt.Println(params)
+}
+
+func genericsTwo[asd int | float64, qwe int | float64](params1 asd, params2 qwe) {
+	fmt.Println(params1)
+	fmt.Println(params2)
+}
+
+func sum[T int | float64](a T, b T) T {
+	return a + b
+}
+
+func sumInt(a int, b int) int {
+	return a + b
+}
+
+func sumFloat64(a float64, b float64) float64 {
+	return a + b
+}
+
+func merge[T any](a []T, b []T) []T {
+	return append(a, b...)
+}
+
 func main() {
 	var numbers = []int{1, 2, 3, 4, 5}
 	var numbersFloat = []float32{1.1, 2.2, 3.3, 4.4, 5.5}
@@ -106,4 +136,31 @@ func main() {
 	//generic interface
 	var redisInt = helpers.Redis[int]{Value: 10}
 	ChangeValue(&redisInt, 20)
+
+	//INCLASS
+	halo("Hello World")
+	halo(123)
+	halo(1.23)
+	halo(true)
+
+	hallo(123)
+	hallo(1.23)
+	hallo(true)
+
+	genericsTwo(123, 1.23)
+
+	hallo(10)
+	hallo(10.5)
+	hallo(true)
+
+	genericsTwo(10, 10.5)
+	genericsTwo(10.5, 10)
+
+	fmt.Println(sumInt(10, 10))
+	fmt.Println(sumFloat64(10.5, 10.5))
+
+	fmt.Println(sum(10, 10))
+	fmt.Println(sum(10.5, 10.5))
+
+	fmt.Println(merge([]int{1, 2, 3}, []int{4, 5, 6}))
 }
