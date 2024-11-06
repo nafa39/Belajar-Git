@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"learn-pointer/helpers"
-	"strings"
 )
 
 // Pointer adalah sebuah variabel yang menyimpan alamat memori dari sebuah variabel lain
@@ -48,15 +47,17 @@ import (
 //INDIVIDUAL EXERCISE
 
 // SumInt sums up all integers in a slice.
-func SumInt(numbers []int) int {
-	sum := 0
-	for _, number := range numbers {
-		sum += number
-	}
-	return sum
-}
+// func SumInt(numbers []int) int {
+// 	sum := 0
+// 	for _, number := range numbers {
+// 		sum += number
+// 	}
+// 	return sum
+// }
 
 //GROUP EXERCISE
+
+//NON GRADED CHALLENGE
 
 func main() {
 
@@ -134,61 +135,79 @@ func main() {
 
 	//INDIVIDUAL EXERCISE
 
-	fmt.Println("Individu Exercise")
-	fmt.Println(" ")
+	// fmt.Println("Individu Exercise")
+	// fmt.Println(" ")
 
-	fmt.Println("Hello Nafa")
+	// fmt.Println("Hello Nafa")
 
-	//string manipulation
-	var name string = " john doe "
-	fmt.Println(name)
+	// //string manipulation
+	// var name string = " john doe "
+	// fmt.Println(name)
 
-	//uppercase
-	fmt.Println(strings.ToUpper(name))
+	// //uppercase
+	// fmt.Println(strings.ToUpper(name))
 
-	//titlecase
-	fmt.Println(strings.Title(name))
+	// //titlecase
+	// fmt.Println(strings.Title(name))
 
-	//lowercase
-	fmt.Println(strings.ToLower(name))
+	// //lowercase
+	// fmt.Println(strings.ToLower(name))
 
-	//trim
-	fmt.Print("Trim:", name, "Something")
-	fmt.Println(" ")
-	fmt.Print("Trim:", strings.TrimRight(name, " "), "Something")
-	fmt.Println(" ")
-	fmt.Print("Trim:", strings.TrimLeft(name, " "), "Something")
-	fmt.Println(" ")
+	// //trim
+	// fmt.Print("Trim:", name, "Something")
+	// fmt.Println(" ")
+	// fmt.Print("Trim:", strings.TrimRight(name, " "), "Something")
+	// fmt.Println(" ")
+	// fmt.Print("Trim:", strings.TrimLeft(name, " "), "Something")
+	// fmt.Println(" ")
 
-	nama := "NAFATUL"
+	// nama := "NAFATUL"
 
-	result := strings.Split(nama, "")
-	fmt.Println(result)
+	// result := strings.Split(nama, "")
+	// fmt.Println(result)
 
-	//sum int
-	result2 := SumInt([]int{1, 2, 3, 4, 5})
+	// //sum int
+	// result2 := SumInt([]int{1, 2, 3, 4, 5})
 
-	fmt.Println(result2)
+	// fmt.Println(result2)
 
-	//GROUP EXERCISE
+	// //GROUP EXERCISE
 
-	fmt.Println(" ")
-	fmt.Println("Group Exercise")
-	fmt.Println(" ")
+	// fmt.Println(" ")
+	// fmt.Println("Group Exercise")
+	// fmt.Println(" ")
 
-	var emp = helpers.Pegawai{
-		ID:   1,
-		Nama: "Andi",
-		Umur: 25,
-		Gaji: 5000000.0,
+	// var emp = helpers.Pegawai{
+	// 	ID:   1,
+	// 	Nama: "Andi",
+	// 	Umur: 25,
+	// 	Gaji: 5000000.0,
+	// }
+
+	// //print data pegawai sebelum di ubah
+	// fmt.Println(emp.ID, emp.Nama, emp.Umur)
+	// fmt.Printf("Gaji sebelum naik: %.2f\n", emp.Gaji)
+
+	// //print data pegawai setelah di ubah
+	// helpers.Ubah(&emp)
+	// fmt.Println(emp.ID, emp.Nama, emp.Umur)
+	// fmt.Printf("Gaji setelah naik: %.2f\n", emp.Gaji)
+
+	//NON GRADED CHALLENGE
+
+	//struct and method
+
+	var person = helpers.Person{
+		Name: "nafa",
+		Age:  45,
+		Job:  "free style",
 	}
 
-	//print data pegawai sebelum di ubah
-	fmt.Println(emp.ID, emp.Nama, emp.Umur)
-	fmt.Printf("Gaji sebelum naik: %.2f\n", emp.Gaji)
+	//print data person sebelum diubah
+	fmt.Println(person)
 
-	//print data pegawai setelah di ubah
-	helpers.Ubah(&emp)
-	fmt.Println(emp.ID, emp.Nama, emp.Umur)
-	fmt.Printf("Gaji setelah naik: %.2f\n", emp.Gaji)
+	for i := 0; i < 5; i++ {
+		helpers.AddYear(&person)
+	}
+	fmt.Println(person)
 }

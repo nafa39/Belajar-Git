@@ -7,3 +7,13 @@ type Pegawai struct {
 	Umur int
 	Gaji float64
 }
+
+//NON GRADED CHALLENGE
+
+//STRUCT AND METHOD
+
+type Person struct {
+	Name string
+	Age  int
+	Job  string
+}
