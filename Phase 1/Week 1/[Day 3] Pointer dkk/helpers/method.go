@@ -1,5 +1,7 @@
 package helpers
 
+import "fmt"
+
 func (pegawai *Pegawai) NaikkanGaji(persen float64) {
 	pegawai.Gaji += (pegawai.Gaji * persen / 100)
 }
@@ -8,10 +10,10 @@ func (pegawai *Pegawai) NaikkanGaji(persen float64) {
 
 //struct and method
 
-func (person *Person) GetInfo() {
-	person.Name = "Bambang"
-	person.Age = 20
-	person.Job = "Gambler"
+func GetInfo(person *Person) {
+	fmt.Println(person.Name)
+	fmt.Println(person.Age)
+	fmt.Println(person.Job)
 }
 
 func AddYear(age *Person) {

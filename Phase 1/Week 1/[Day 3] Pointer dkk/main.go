@@ -210,4 +210,15 @@ func main() {
 		helpers.AddYear(&person)
 	}
 	fmt.Println(person)
+
+	//struct & method 2
+	var org = []helpers.Person{
+		{Name: "dicki", Age: 51, Job: "anak tiri"},
+		{Name: "billa", Age: 8, Job: "sparepart"},
+		{Name: "sulhan", Age: 9, Job: "mekanik"},
+	}
+
+	for _, o := range org {
+		helpers.GetInfo(&o)
+	}
 }
