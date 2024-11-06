@@ -17,3 +17,18 @@ type Person struct {
 	Age  int
 	Job  string
 }
+
+//struct HERO 1
+
+type Hero struct {
+	Name           string
+	BaseAttack     int
+	Defence        int
+	CriticalDamage int
+	HealthPoint    int
+	Weap           Weapon
+}
+
+type Weapon struct {
+	Attack int
+}

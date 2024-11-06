@@ -221,4 +221,17 @@ func main() {
 	for _, o := range org {
 		helpers.GetInfo(&o)
 	}
+
+	//struct HERO 1
+
+	var hero = helpers.Hero{
+		Name:           "billa",
+		BaseAttack:     80,
+		Defence:        60,
+		CriticalDamage: 100,
+		HealthPoint:    20,
+		Weap:           helpers.Weapon{Attack: 20},
+	}
+
+	helpers.CountDamage(&hero)
 }
