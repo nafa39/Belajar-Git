@@ -234,4 +234,25 @@ func main() {
 	}
 
 	helpers.CountDamage(&hero)
+
+	//struct HERO 2
+	var attacker = helpers.Hero{
+		Name:           "gus dur",
+		BaseAttack:     110,
+		Defence:        50,
+		CriticalDamage: 90,
+		HealthPoint:    70,
+		Weap:           helpers.Weapon{Attack: 100},
+	}
+
+	var defender = helpers.Hero{
+		Name:           "jokowi",
+		BaseAttack:     200,
+		Defence:        20,
+		CriticalDamage: 40,
+		HealthPoint:    1300,
+		Weap:           helpers.Weapon{Attack: 110},
+	}
+
+	helpers.Battle(&attacker, &defender)
 }
