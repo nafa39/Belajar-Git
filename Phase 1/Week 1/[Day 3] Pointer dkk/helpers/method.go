@@ -3,7 +3,6 @@ package helpers
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 func (pegawai *Pegawai) NaikkanGaji(persen float64) {
@@ -32,7 +31,7 @@ var TotalDamage int
 // struct HERO 1
 func CountDamage(damage *Hero) int {
 	TotalDamage = damage.Weap.Attack + damage.BaseAttack
-	rand.Seed(time.Now().UnixNano())
+	//rand.Seed(time.Now().UnixNano())
 	if rand.Intn(2) == 0 {
 		TotalDamage += damage.CriticalDamage
 		fmt.Printf("the total damage is %d with critical damage\n", TotalDamage)
