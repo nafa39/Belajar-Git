@@ -89,31 +89,55 @@ var arrChar = ['Tono', 'Budi', 'Charlie', 'Ahmad']
 // console.log(arrChar);
 
 //object()
-const supermanObj = {
-    id: '001',
-    name: 'superman',
-    address: 'Cryton street',
-    age: 32,
-    stillAlive: true,
-    hobbies: [
-        'saving planet earth',
-        'reading newspaper',
-    ],
-    favoriteFoods: [
-        'bakso granat',
-        'pecel lele'
-    ]
-}
+// const supermanObj = {
+//     id: '001',
+//     name: 'superman',
+//     address: 'Cryton street',
+//     age: 32,
+//     stillAlive: true,
+//     hobbies: [
+//         'saving planet earth',
+//         'reading newspaper',
+//     ],
+//     favoriteFoods: [
+//         'bakso granat',
+//         'pecel lele'
+//     ]
+// }
 
-const person = {
-    name: 'John',
-    age: 23
-}
+// const person = {
+//     name: 'John',
+//     age: 23
+// }
 
-// property re assignment
+// // property re assignment
 
-person.name = 'Mike';
-person.age = 40;
+// person.name = 'Mike';
+// person.age = 40;
 
 //modular function
+function removeSpaces (value){
+    return value.replace(/\s/g, '');
+}
 
+function reverseText (value){
+    return value.split('').reverse().join('');
+}
+
+function updateVowels (value){
+    const vowelMap = {
+        'a':'b', 'b':'c', 'c':'d', 'd':'e', 'e':'f', 'f':'g', 'g':'h', 'h':'i', 'i':'j', 'j':'k', 'k':'l', 'l':'m', 'm':'n', 'n':'o', 'o':'p', 'p':'q', 'q':'r', 'r':'s', 's':'t', 't':'u', 'u':'v', 'v':'w', 'w':'x', 'x':'y', 'y':'z', 'z':'a',
+        'A':'B', 'B':'C', 'C':'D', 'D':'E', 'E':'F', 'F':'G', 'G':'H', 'H':'I', 'I':'J', 'J':'K', 'K':'L', 'L':'M', 'M':'N', 'N':'O', 'O':'P', 'P':'Q', 'Q':'R', 'R':'S', 'S':'T', 'T':'U', 'U':'V', 'V':'W', 'W':'X', 'X':'Y', 'Y':'Z', 'Z':'A'
+    };
+    
+    return value.split('').map(char => vowelMap[char] || char).join('');
+}
+
+var password = 'Hacktiv 8';
+var noSpace = removeSpaces(password);
+var reverse = reverseText(noSpace);
+var encryptedPassword = updateVowels(reverse);
+
+console.log(noSpace);
+console.log(reverse);
+console.log(encryptedPassword);
