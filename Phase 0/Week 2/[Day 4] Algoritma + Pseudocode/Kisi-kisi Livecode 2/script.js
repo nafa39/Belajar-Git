@@ -119,19 +119,19 @@ const armorsAvailable = [
 ]
 
 function getArmorAvailability (armors){
-    let armorsAvail = [];
+    //let armorsAvail = [];
     for (let i=0; i<armorsAvailable.length; i++){
         if (armors === armorsAvailable[i]){
-            armorsAvail.push(armorsAvailable[i]);
-            console.log(`"${armorsAvail}": true`);
-            return armorsAvail;
+            //armorsAvail.push(armorsAvailable[i]);
+            console.log(`"${armors}": true`);
+            return armors;
         }
     }
-    console.log(`"${armors}": false`);
+    //console.log(`"${armors}": false`);
 }
 getArmorAvailability("Chainmail");
 
-const armors = [
+const armorsy = [
     ['Dragon Scale', 'Heavy', 50],
     ['Elven Leather', 'Light', 30],
     ['Wizard Robe', 'Cloth', 15],
@@ -155,7 +155,7 @@ function getArmorAv1ailability1 (armors1){
         }
     }
     console.log(`"${armors1}": ${false}`);
-    //return index;
+    return 0;
 }
 
 function getTotalDefense(character){
@@ -191,19 +191,20 @@ const armorsInArmory = [
 function getArmorAvailability2 (armors){
     let armorsAvail = [];
     for (let i=0; i<armors.length; i++){
-        if (armors1 === armors[i][0]){
-            armorsAvail.push(armors[i][0]);
+        if (armors === armorsy[i][0]){
+            armorsAvail.push(armorsy[i][0]);
             console.log(`"${armorsAvail}": ${true}`);
-            return armors[i][2];
+            return armorsy[i][2];
         }
     }
-    console.log(`"${armors1}": ${false}`);
+    //console.log(`"${armors}": ${false}`);
+    return 0
 }
 
 function getTotalDefense(character){
     let total = character.baseDefense;
     for (let i=0; i<character.armorUsed.length; i++){
-        let addedDefense = getArmorAv1ailability2(character.armorUsed[i])
+        let addedDefense = getArmorAvailability2(character.armorUsed[i])
         total += addedDefense;
     }
     console.log(total);
@@ -212,10 +213,12 @@ function getTotalDefense(character){
 function getDefenseSummary (inputCharacters, armorsInArmory){
     for (let i=0; i<inputCharacters.length; i++){
         for (let j=0; j< inputCharacters[i].armorToEquip.length; j++){
-            let arUsed = getArmorAvailability2 (inputCharacters[i].armorToEquip[j])
-            inputCharacters[i].character[j].armorUsed.push(arUsed);
-            return arUsed;
+            const arUsed = inputCharacters[i].armorToEquip[j];
+            if (armorsInArmory.includes(arUsed)){
+                inputCharacters[i].character.armorUsed.push(arUsed);
+            }
         }
+        console.log(inputCharacters[i].character.armorUsed);
         getTotalDefense(inputCharacters[i].character);
     }
 }
