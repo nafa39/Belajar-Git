@@ -197,7 +197,9 @@ func main() {
 	// time.Sleep(6 * time.Second)
 }
 
-// go routine to send email
+//time.Sleep(6 * time.Second)
+
+//go routine to send email
 // package main
 
 // import (
