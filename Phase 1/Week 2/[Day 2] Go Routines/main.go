@@ -1,19 +1,43 @@
-// package main
+package main
 
-// import (
-// 	"fmt"
-// 	"sync"
-// 	"time"
-// )
+import (
+	"fmt"
+	"sync"
+)
 
-// // func routine1() {
-// // 	for i := 0; i < 5; i++ {
-// // 		fmt.Println("routine: ", i)
-// // 		time.Sleep(1 * time.Second)
-// // 	}
-// // }
+// REVIEW MATERI
+func factorial(n int, wg *sync.WaitGroup) {
+	defer wg.Done()
 
-// //go routine send email
+	result := 1
+	for i := 2; i <= n; i++ {
+		result *= i
+	}
+
+	fmt.Printf("Factorial of %d is %d\n", n, result)
+}
+
+func factorial1(n int) int {
+	//defer wg.Done()
+
+	result := 1
+	for i := 2; i <= n; i++ {
+		result *= i
+	}
+
+	fmt.Printf("Factorial of %d is %d\n", n, result)
+	return n
+}
+
+// //INCLASS
+// func routine1() {
+// 	for i := 0; i < 5; i++ {
+// 		fmt.Println("routine: ", i)
+// 		time.Sleep(1 * time.Second)
+// 	}
+// }
+
+// // go routine send email
 
 // func sendEmail() {
 // 	for i := 0; i < 2; i++ {
@@ -36,39 +60,59 @@
 // 	}
 // }
 
-// func main() {
-// 	//start a go routine
-// 	// go routine1()
+func main() {
 
-// 	// //main routine
-// 	// for i := 0; i < 2; i++ {
-// 	// 	fmt.Println("main: ", i)
-// 	// 	//time.Sleep(1 * time.Second)
-// 	// }
+	//REVIEW MATERI
+	numbers := []int{5, 7, 3, 10}
 
-// 	// time.Sleep(5 * time.Second)
-// 	// fmt.Println("main function")
+	var wg sync.WaitGroup
+	wg.Add(len(numbers))
 
-// 	var wg sync.WaitGroup
-// 	wg.Add(2)
+	for _, num := range numbers {
+		go factorial(num, &wg)
+	}
 
-// 	//go routine
-// 	go func() {
-// 		go sendEmail()
-// 		wg.Done()
-// 	}()
+	wg.Wait()
+	fmt.Println("All factorials calculated.")
 
-// 	go func() {
-// 		go sendSMS()
-// 		wg.Done()
-// 	}()
+	for _, num := range numbers {
+		fact := factorial1(num)
+		fmt.Printf("Calculated factorial %d\n", fact)
+	}
 
-// 	wg.Wait()
+	// //INCLASS
+	// // start a go routine
+	// go routine1()
 
-// 	storeData()
+	// //main routine
+	// for i := 0; i < 2; i++ {
+	// 	fmt.Println("main: ", i)
+	// 	//time.Sleep(1 * time.Second)
+	// }
 
-// 	time.Sleep(6 * time.Second)
-// }
+	// time.Sleep(5 * time.Second)
+	// fmt.Println("main function")
+
+	// var wg sync.WaitGroup
+	// wg.Add(2)
+
+	// //go routine
+	// go func() {
+	// 	go sendEmail()
+	// 	wg.Done()
+	// }()
+
+	// go func() {
+	// 	go sendSMS()
+	// 	wg.Done()
+	// }()
+
+	// wg.Wait()
+
+	// storeData()
+
+	// time.Sleep(6 * time.Second)
+}
 
 // go routine to send email
 // package main
@@ -125,5 +169,5 @@
 // 	time.Sleep(6 * time.Second)
 // }
 
-//CATATAN
-//asynchronous programming pasti delay dulu
+// CATATAN
+// asynchronous programming pasti delay dulu

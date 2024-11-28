@@ -13,7 +13,7 @@ func processImage(imageURL string) {
 	fmt.Printf("Image processing completed %s\n", imageURL)
 }
 
-func main() {
+func lain() {
 	images := []string{
 		"https://example.com/image1.jpg",
 		"https://example.com/image2.jpg",
