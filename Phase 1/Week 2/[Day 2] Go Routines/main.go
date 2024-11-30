@@ -2,6 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"sync"
 	"time"
 )
 
@@ -53,15 +57,53 @@ import (
 // 	fmt.Println("Second process func ended")
 // }
 
-// Asynchronous email sending
-type Notification struct {
-	UserID  int
-	Message string
-}
+// // Asynchronous email sending
+// type Notification struct {
+// 	UserID  int
+// 	Message string
+// }
 
-func sendEmailAsync(userID int, message string) {
-	time.Sleep(2 * time.Second)
-	fmt.Printf("Email notification sent to user %d: %s\n", userID, message)
+// func sendEmailAsync(userID int, message string) {
+// 	time.Sleep(2 * time.Second)
+// 	fmt.Printf("Email notification sent to user %d: %s\n", userID, message)
+// }
+
+// // Images processing services
+// func processImage(imageURL string) {
+// 	fmt.Printf("Processing image: %s\n", imageURL)
+
+// 	time.Sleep(3 * time.Second)
+
+// 	fmt.Printf("Image processing completed: %s\n", imageURL)
+// }
+
+// // Task scheduler
+// func scheduleTask(task func()) {
+// 	go task()
+// }
+
+// download manager
+func downloadFile(url string, destination string) {
+	response, err := http.Get(url)
+	if err != nil {
+		fmt.Printf("Error downloading file from %s: %s\n", url, err)
+		return
+	}
+	defer response.Body.Close()
+
+	file, err := os.Create(destination)
+	if err != nil {
+		fmt.Printf("Error creating file %s: %s\n", destination, err)
+		return
+	}
+	defer file.Close()
+
+	_, err = io.Copy(file, response.Body)
+	if err != nil {
+		fmt.Printf("Error writing to file %s: %s\n", destination, err)
+		return
+	}
+	fmt.Printf("Downloaded file from %s to %s\n", url, destination)
 }
 
 // //INCLASS
@@ -162,6 +204,109 @@ func main() {
 	// wg.Wait()
 	// diff := time.Since(now)
 	// fmt.Println(diff)
+
+	// // Asynchronous email sending
+	// now := time.Now()
+	// notifications := []Notification{
+	// 	{UserID: 101, Message: "Your order has been confirmed."},
+	// 	{UserID: 202, Message: "Your account has been created."},
+	// 	{UserID: 303, Message: "Your payment was successful."},
+	// }
+
+	// for _, notification := range notifications {
+	// 	go sendEmailAsync(notification.UserID, notification.Message)
+	// }
+
+	// fmt.Println("Main application continous...")
+
+	// time.Sleep(3 * time.Second)
+
+	// fmt.Println("Main application finished.")
+	// diff := time.Since(now)
+	// fmt.Println(diff)
+
+	// // Images processing services
+	// now := time.Now()
+
+	// images := []string{
+	// 	"https://example.com/image1.jpg",
+	// 	"https://example.com/image2.jpg",
+	// 	"https://example.com/image3.jpg",
+	// 	"https://example.com/image4.jpg",
+	// }
+
+	// for _, image := range images {
+	// 	go processImage(image)
+	// }
+
+	// fmt.Println("Image processing started, main application continues...")
+
+	// time.Sleep(5 * time.Second)
+
+	// fmt.Println("All image processing completed.")
+	// diff := time.Since(now)
+	// fmt.Println(diff)
+
+	// // task scheduler
+	// now := time.Now()
+	// task1 := func() {
+	// 	fmt.Println("Task 1 is being executed.")
+	// }
+
+	// task2 := func() {
+	// 	fmt.Println("Task 2 is being executed.")
+	// }
+
+	// task3 := func() {
+	// 	fmt.Println("Task 3 is being executed.")
+	// }
+
+	// scheduleTask(task1)
+	// scheduleTask(task2)
+	// scheduleTask(task3)
+
+	// fmt.Println("Main application continues...")
+
+	// var wg sync.WaitGroup
+	// wg.Add(3)
+	// go func() {
+	// 	wg.Wait()
+	// 	fmt.Println("All task completed.")
+	// }()
+
+	// wg.Done()
+	// wg.Done()
+	// wg.Done()
+
+	// diff := time.Since(now)
+	// fmt.Println(diff)
+
+	// //the output is different asyncron each other
+
+	//download manager
+	now := time.Now()
+	downloadJobs := map[string]string{
+		"https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4": "video1.mp4",
+		"https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4": "video2.mp4",
+		"https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4": "video3.mp4",
+	}
+
+	var wg sync.WaitGroup
+	wg.Add(len(downloadJobs))
+
+	for url, destination := range downloadJobs {
+		go func(u, d string) {
+			defer wg.Done()
+			downloadFile(u, d)
+		}(url, destination)
+	}
+
+	wg.Wait()
+
+	fmt.Println("All files downloaded.")
+
+	diff := time.Since(now)
+	fmt.Println(diff)
 
 	// //INCLASS
 	// // start a go routine
