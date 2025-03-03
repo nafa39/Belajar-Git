@@ -1,0 +1,56 @@
+//// Dari sini
+type Orang struct{
+	ID int
+	Uang int
+}
+
+orang 1 = 240000
+Uang orang 2 = 100000
+
+channelBankOrang2 := make(chan int)
+
+orang2 := Orang{
+	ID:   1,
+	Uang: 100000,
+}
+
+fungsi transfer(ID int, jumlah int, channelBankOrang2 chan int, wg *sync.WaitGroup){
+    defer wg.Done()
+	time.Sleep() //Simulasi orang transfer berapa lama
+
+	channelBankOrang2 <- channelBankOrang2 + jumlah
+}
+
+///panggil fungsi memakai go routine
+go transfer(2, 10000, channelBankOrang2)
+go transfer(2, 50000, channelBankOrang2)
+
+channelBankOrang2 (50000 10000)
+
+//receiver pakai perulangan
+for transaksiTransfer := range channelBankOrang2{
+	orang2.Uang = orang.Uang + transaksiTransfer
+}
+
+orang2.Uang = 100000 + 50000
+orang2.Uang = 150000
+
+orang2.Uang = 150000 + 10000
+orang2.Uang = 160000
+
+
+Urutan pembuatan channel
+Harus tau, apa yang dimasukin ke channel
+Fungsi apa yang harus dibuat di dalam go routine (async)
+Buat varible channel
+
+tentukan apakah perlu pakai wait group
+jika pakai wait group, jangan lupa tentukan wg.Add(jumlahGoRoutine)
+dan wg.Done() harus sesuai jumlahnya dengan jumlahGoRoutine
+
+panggil fungsi memakai go routine
+assign ke dalam variable channel (sender)
+pakai variable channel (receiver)
+
+kalau pakai wait group, wg.Wait()
+close channel kalau sudah selesai
